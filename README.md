@@ -273,3 +273,18 @@ artifacts/sre-qa-prometheus-query/
 ```bash
 python -m unittest discover -s tests -p 'test_*.py'
 ```
+
+## Contributor Workflow
+
+For development standards (change types, testing baseline, compatibility policy, and PR checklist), see [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+Recommended local validation flow:
+
+```bash
+python -m unittest discover -s tests -p 'test_*.py'
+python -m training_prometheus.cli \
+  --descriptor examples/environment.qa.json \
+  --metrics examples/metrics.sample.json \
+  --out ./artifacts
+```
+
