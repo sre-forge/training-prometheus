@@ -1,0 +1,9 @@
+{
+  "environment_name": "qa",
+  "prometheus_endpoint": "https://qa-thanos.example.com",
+  "namespace_scope": ["sre"],
+  "cluster_type": "kubernetes",
+  "retention_days": 7,
+  "scrape_interval": "30s",
+  "sre_contract_version": "v1"
+}

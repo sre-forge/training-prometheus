@@ -224,3 +224,51 @@ sre-<env>-prometheus-query/
 > 我们构建先学习、后确定性执行的系统。
 >
 > **训练先于生产。**
+
+
+## 当前实现状态
+
+仓库已提供以下模块的可运行参考实现：
+
+- `prom-env-profiler`
+- `prom-semantic-mapper`
+- `prom-query-validator`
+- `prom-stability-evaluator`
+- `prom-static-skill-compiler`
+- `prom-skill-governance`（可选治理元数据与校验）
+
+主要代码结构：
+
+```text
+training_prometheus/
+  adapters.py
+  cli.py
+  models.py
+  profiler.py
+  semantic_mapper.py
+  query_validator.py
+  stability_evaluator.py
+  static_skill_compiler.py
+  skill_governance.py
+  pipeline.py
+```
+
+## 快速开始
+
+使用示例输入运行：
+
+```bash
+python -m training_prometheus.cli   --descriptor examples/environment.qa.json   --metrics examples/metrics.sample.json   --out ./artifacts
+```
+
+流水线会输出中间产物；如果稳定性评估通过，会编译静态技能到：
+
+```text
+artifacts/sre-qa-prometheus-query/
+```
+
+## 测试
+
+```bash
+python -m unittest discover -s tests -p 'test_*.py'
+```

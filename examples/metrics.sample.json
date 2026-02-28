@@ -1,0 +1,13 @@
+{
+  "metrics": [
+    {"name": "container_cpu_usage_seconds_total", "type": "counter", "exporter": "kubelet", "labels": {"namespace": "sre", "workload": "api", "node": "node-a"}},
+    {"name": "container_memory_working_set_bytes", "type": "gauge", "exporter": "kubelet", "labels": {"namespace": "sre", "workload": "api", "node": "node-a"}},
+    {"name": "kube_pod_container_resource_limits_cpu_cores", "type": "gauge", "exporter": "kube-state-metrics", "labels": {"namespace": "sre", "workload": "api"}},
+    {"name": "container_network_receive_bytes_total", "type": "counter", "exporter": "kubelet", "labels": {"namespace": "sre", "workload": "api"}},
+    {"name": "node_netstat_Tcp_CurrEstab", "type": "gauge", "exporter": "node-exporter", "labels": {"node": "node-a"}},
+    {"name": "process_open_fds", "type": "gauge", "exporter": "app", "labels": {"namespace": "sre", "job": "api", "instance": "api-0"}},
+    {"name": "process_threads", "type": "gauge", "exporter": "app", "labels": {"namespace": "sre", "job": "api", "instance": "api-0"}},
+    {"name": "node_load1", "type": "gauge", "exporter": "node-exporter", "labels": {"node": "node-a", "instance": "node-a:9100"}},
+    {"name": "http_requests_total", "type": "counter", "exporter": "app", "labels": {"namespace": "sre", "workload": "api", "code": "200"}}
+  ]
+}
