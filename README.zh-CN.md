@@ -1,5 +1,7 @@
 # training-prometheus
 
+[English README](./README.md) · [兼容文件名 README-zh.md](./README-zh.md)
+
 一个用于 SRE 查询工作流的**确定性 Prometheus 环境画像与静态技能编译器**。
 
 ## 项目概述
@@ -258,7 +260,10 @@ training_prometheus/
 使用示例输入运行：
 
 ```bash
-python -m training_prometheus.cli   --descriptor examples/environment.qa.json   --metrics examples/metrics.sample.json   --out ./artifacts
+python -m training_prometheus.cli \
+  --descriptor examples/environment.qa.json \
+  --metrics examples/metrics.sample.json \
+  --out ./artifacts
 ```
 
 流水线会输出中间产物；如果稳定性评估通过，会编译静态技能到：

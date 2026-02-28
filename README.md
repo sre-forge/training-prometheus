@@ -1,6 +1,6 @@
 # training-prometheus
 
-[中文版本（README.zh-CN.md）](./README.zh-CN.md)
+[中文版本（README.zh-CN.md）](./README.zh-CN.md) · [兼容文件名 README-zh.md](./README-zh.md)
 
 A deterministic Prometheus environment profiler and static skill compiler for SRE query workflows.
 
@@ -253,7 +253,10 @@ training_prometheus/
 Run with provided example inputs:
 
 ```bash
-python -m training_prometheus.cli   --descriptor examples/environment.qa.json   --metrics examples/metrics.sample.json   --out ./artifacts
+python -m training_prometheus.cli \
+  --descriptor examples/environment.qa.json \
+  --metrics examples/metrics.sample.json \
+  --out ./artifacts
 ```
 
 The pipeline writes intermediate artifacts and, when stable, compiles a static skill under:
