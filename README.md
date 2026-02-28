@@ -1,6 +1,8 @@
 # training-prometheus
 
+
 [中文版本（README.zh-CN.md）](./README.zh-CN.md) · [兼容文件名 README-zh.md](./README-zh.md)
+
 
 A deterministic Prometheus environment profiler and static skill compiler for SRE query workflows.
 
@@ -219,6 +221,7 @@ Implementation roadmap coming soon.
 > We build systems that learn first, then execute deterministically.
 >
 > **Training precedes production.**
+
 
 
 ## Implementation Status
