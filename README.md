@@ -1,6 +1,8 @@
 # training-prometheus
 
-[中文版本（README.zh-CN.md）](./README.zh-CN.md)
+
+[中文版本（README.zh-CN.md）](./README.zh-CN.md) · [兼容文件名 README-zh.md](./README-zh.md)
+
 
 A deterministic Prometheus environment profiler and static skill compiler for SRE query workflows.
 
@@ -219,3 +221,55 @@ Implementation roadmap coming soon.
 > We build systems that learn first, then execute deterministically.
 >
 > **Training precedes production.**
+
+
+
+## Implementation Status
+
+This repository now includes a working reference implementation for:
+
+- `prom-env-profiler`
+- `prom-semantic-mapper`
+- `prom-query-validator`
+- `prom-stability-evaluator`
+- `prom-static-skill-compiler`
+- `prom-skill-governance` (optional metadata/checksum layer)
+
+Main package layout:
+
+```text
+training_prometheus/
+  adapters.py
+  cli.py
+  models.py
+  profiler.py
+  semantic_mapper.py
+  query_validator.py
+  stability_evaluator.py
+  static_skill_compiler.py
+  skill_governance.py
+  pipeline.py
+```
+
+## Quick Start
+
+Run with provided example inputs:
+
+```bash
+python -m training_prometheus.cli \
+  --descriptor examples/environment.qa.json \
+  --metrics examples/metrics.sample.json \
+  --out ./artifacts
+```
+
+The pipeline writes intermediate artifacts and, when stable, compiles a static skill under:
+
+```text
+artifacts/sre-qa-prometheus-query/
+```
+
+## Tests
+
+```bash
+python -m unittest discover -s tests -p 'test_*.py'
+```
